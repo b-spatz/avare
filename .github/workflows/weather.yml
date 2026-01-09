@@ -1,4 +1,5 @@
 # 2026-01-08, bspatz: trial, disable cron schedule and upload to mamba, add upload artifact
+# 2026-01-10, bspatz: try adding release upload for public access to artifacts
 
 name: Weather CI
 
@@ -26,11 +27,19 @@ jobs:
         run: |
           cd extra/mamba && ./put_tenmin.sh
   
-      - name: Upload release
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: DATA
           path: |
+            extra/mamba/TFRs.zip
+            extra/mamba/weather.zip
+            extra/mamba/conus.zip
+
+      - name: Upload release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
             extra/mamba/TFRs.zip
             extra/mamba/weather.zip
             extra/mamba/conus.zip
