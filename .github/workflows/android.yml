@@ -1,6 +1,6 @@
 # 2026-01-08, bspatz: disable for now
 
-name: Android CI
+name: Android CI -- DISABLED
 
 on:
   workflow_dispatch:
