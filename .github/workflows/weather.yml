@@ -1,9 +1,11 @@
+# 2026-01-08, bspatz: trial, disable cron schedule and upload to mamba, add upload artifact
+
 name: Weather CI
 
-
 on:
-  schedule:
-    - cron: '*/10 * * * *'
+  workflow_dispatch:
+#  schedule:
+#    - cron: '*/10 * * * *'
 
 jobs:
   build:
@@ -26,8 +28,20 @@ jobs:
         run: |
           cd extra/mamba && ./put_tenmin.sh
 
+    - name: Upload release
+      uses: actions/upload-artifact@v4
+      with:
+        name: DATA
+        strip_components: 2
+        path: |
+          extra/mamba/TFRs.zip
+          extra/mamba/weather.zip
+          extramamba/conus.zip
+
+# disable this step with if below
       - name: SSH to mamba
         uses: appleboy/scp-action@v0.1.7
+        if: false
         with:
           host: apps4av.org
           username: apps4av
