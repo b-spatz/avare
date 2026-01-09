@@ -30,7 +30,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DATA
-          strip_components: 2
           path: |
             extra/mamba/TFRs.zip
             extra/mamba/weather.zip
