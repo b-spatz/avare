@@ -9,9 +9,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-24.04
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.12
@@ -27,16 +25,16 @@ jobs:
       - name: Build weather
         run: |
           cd extra/mamba && ./put_tenmin.sh
-
-    - name: Upload release
-      uses: actions/upload-artifact@v4
-      with:
-        name: DATA
-        strip_components: 2
-        path: |
-          extra/mamba/TFRs.zip
-          extra/mamba/weather.zip
-          extramamba/conus.zip
+  
+      - name: Upload release
+        uses: actions/upload-artifact@v4
+        with:
+          name: DATA
+          strip_components: 2
+          path: |
+            extra/mamba/TFRs.zip
+            extra/mamba/weather.zip
+            extra/mamba/conus.zip
 
 # disable this step with if below
       - name: SSH to mamba
