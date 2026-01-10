@@ -6,11 +6,13 @@ name: Weather CI 2
 
 on:
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Workflow tag'
-        required: true
-        default: 'data'  
+    tags:
+      - 'data'
+#    inputs:
+#      tags:
+#        description: 'Workflow tag'
+#        required: true
+#        default: 'data'  
 #  schedule:
 #    - cron: '*/10 * * * *'
 
