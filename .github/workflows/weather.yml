@@ -31,6 +31,7 @@ jobs:
   
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        if: false
         with:
           name: DATA
           path: |
@@ -46,6 +47,7 @@ jobs:
             extra/mamba/TFRs.zip
             extra/mamba/weather.zip
             extra/mamba/conus.zip
+            version.php
 
 # disable this step with if below
       - name: SSH to mamba
