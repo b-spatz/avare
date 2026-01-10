@@ -2,7 +2,7 @@
 # 2026-01-10, bspatz: try adding release upload for public access to artifacts
 # 2026-01-11, bspatz: try setting tag=data statically
 
-name: Weather CI
+name: Weather CI 2
 
 on:
   workflow_dispatch:
