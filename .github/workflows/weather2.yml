@@ -45,6 +45,8 @@ jobs:
 
       - name: Upload release
         uses: softprops/action-gh-release@v2
+        env:
+          TAGS: ${{ inputs.tags }}
         if: github.ref_type == 'tag'
         with:
           files: |
