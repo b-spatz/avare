@@ -5,8 +5,8 @@ name: Weather CI
 
 on:
   workflow_dispatch:
-    tags:
-      - '*'
+#    tags:
+#      - '*'
 #  schedule:
 #    - cron: '*/10 * * * *'
 
